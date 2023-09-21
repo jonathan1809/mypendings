@@ -33,7 +33,9 @@ const PendingForm: React.FC<PendingFormProps> = ({ onSubmit }) => {
   const isDuplicateDescription = (description: string) => {
     return tasks?.find(
       (task: Task) =>
-        task.text === description && task.status === StatusEnum.active
+        task.text.toLocaleLowerCase().trim() ===
+          description.toLocaleLowerCase().trim() &&
+        task.status === StatusEnum.active
     );
   };
 
@@ -67,8 +69,8 @@ const PendingForm: React.FC<PendingFormProps> = ({ onSubmit }) => {
     ) {
       const task: Task = {
         id: uuidv4(),
-        priority: priority,
-        text: text,
+        priority: priority.trim(),
+        text: text.trim(),
         status: status as StatusTask,
         dueDate: dueDate,
       };

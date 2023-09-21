@@ -2,7 +2,6 @@
   "name": "mypendings",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -10,7 +9,7 @@
     "preview": "vite preview",
     "test": "jest",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -21,12 +20,11 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.3",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.5",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
-    "@types/testing-library__jest-dom": "^6.0.0",
-    "@types/testing-library__react-hooks": "^4.0.0",
     "@types/text-encoding": "^0.0.37",
     "@types/uuid": "^9.0.4",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
